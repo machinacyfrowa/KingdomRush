@@ -25,9 +25,17 @@ public class EnemyController : MonoBehaviour
     {
         transform.LookAt(waypoints.First());
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        if(Vector3.Distance(transform.position, waypoints.First().position) < 0.01f)
+        if(Vector3.Distance(transform.position, waypoints.First().position) < 0.1f)
         {
             waypoints.RemoveAt(0);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision!");
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
         }
     }
 }
