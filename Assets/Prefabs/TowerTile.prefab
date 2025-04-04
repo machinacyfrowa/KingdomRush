@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5058485007194978329, guid: f53d93b116ace024389eda5a5b074cef, type: 3}
   bulletSpawn: {fileID: 7232792085094263722}
+  range: 20
 --- !u!1001 &1638276454471564272
 PrefabInstance:
   m_ObjectHideFlags: 0

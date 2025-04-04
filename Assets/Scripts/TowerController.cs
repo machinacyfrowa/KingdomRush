@@ -7,7 +7,7 @@ public class TowerController : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-
+    public float range = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,16 @@ public class TowerController : MonoBehaviour
     }
     void Fire()
     {
-        GameObject target = GameObject.FindGameObjectWithTag("Enemy");
+        List<Collider> targetCollidersInRange = Physics.OverlapSphere(bulletSpawn.position, range).ToList();
+        //odfiltruj elementy bez taga enemy
+        targetCollidersInRange = targetCollidersInRange.Where(x => x.CompareTag("Enemy")).ToList();
+        //posortuj wed³ug odleg³oœci od wie¿y
+        targetCollidersInRange = targetCollidersInRange.OrderBy(x => Vector3.Distance(bulletSpawn.position, x.transform.position)).ToList();
+        if(targetCollidersInRange.Count == 0)
+        {
+            return;
+        }
+        GameObject target = targetCollidersInRange.First().gameObject;
         bulletSpawn.LookAt(target.transform.position+target.transform.forward*1.5f);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<BulletController>().target = target;
