@@ -20,5 +20,10 @@ public class BulletController : MonoBehaviour
             transform.LookAt(target.transform.position);
             rb.velocity = transform.forward * rb.velocity.magnitude;
         }
+        else
+        {
+            //TODO: czy to napewo jest dobry pomys³?
+            Destroy(gameObject);
+        }
     }
 }

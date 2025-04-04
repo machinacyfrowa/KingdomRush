@@ -26,6 +26,7 @@ public class TowerController : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<BulletController>().target = target;
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 50;
-        Destroy(bullet, 2.0f);
+        //to ju¿ nie jest potrzebne - pocisk bez celu ulega samodestrukcji
+        //Destroy(bullet, 2.0f);
     }
 }
