@@ -24,6 +24,7 @@ public class TowerController : MonoBehaviour
         GameObject target = GameObject.FindGameObjectWithTag("Enemy");
         bulletSpawn.LookAt(target.transform.position+target.transform.forward*1.5f);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        bullet.GetComponent<BulletController>().target = target;
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 50;
         Destroy(bullet, 2.0f);
     }
