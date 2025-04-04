@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c4ca0fc82fa564181ec9f958a1e6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldText: {fileID: 1620861988}
 --- !u!4 &22152195
 Transform:
   m_ObjectHideFlags: 0
@@ -2876,7 +2877,7 @@ GameObject:
   - component: {fileID: 1620861989}
   - component: {fileID: 1620861988}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GoldCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
