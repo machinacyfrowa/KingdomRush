@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7291588216552159152}
   - component: {fileID: 3005128217776961985}
+  - component: {fileID: 6317425354999211214}
   m_Layer: 0
   m_Name: TowerTile
   m_TagString: Untagged
@@ -81,6 +82,29 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5058485007194978329, guid: f53d93b116ace024389eda5a5b074cef, type: 3}
   bulletSpawn: {fileID: 7232792085094263722}
   range: 20
+--- !u!136 &6317425354999211214
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778461642004145246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 7
+  m_Direction: 1
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1001 &1638276454471564272
 PrefabInstance:
   m_ObjectHideFlags: 0

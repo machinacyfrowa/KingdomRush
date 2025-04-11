@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    //wie¿a która wystrzeli³a pocisk
+    public GameObject tower;
     public GameObject? target;
     Rigidbody rb;
     // Start is called before the first frame update

@@ -42,6 +42,8 @@ public class EnemyController : MonoBehaviour
         //Debug.Log("Collision!");
         if (collision.gameObject.tag == "Bullet")
         {
+            collision.gameObject.gameObject.GetComponent<BulletController>()
+                                .tower.GetComponent<TowerController>().RegisterKill();
             levelManager.AddGold(1);
             Destroy(gameObject);
         }

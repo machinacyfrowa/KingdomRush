@@ -22,4 +22,13 @@ public class LevelManager : MonoBehaviour
     {
         gold += amount;
     }
+    public bool DeductGold(int amount)
+    {
+        if (gold >= amount)
+        {
+            gold -= amount;
+            return true;
+        }
+        return false;
+    }
 }
