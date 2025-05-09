@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   speed: 5
+  health: 10
 --- !u!136 &9112493939016275406
 CapsuleCollider:
   m_ObjectHideFlags: 0

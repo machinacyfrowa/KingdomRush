@@ -10,6 +10,7 @@ public class TowerWindowScript : MonoBehaviour
     public TextMeshProUGUI towerName;
     public TextMeshProUGUI killCount;
     public TextMeshProUGUI rof;
+    public TextMeshProUGUI damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class TowerWindowScript : MonoBehaviour
         towerName.text = tower.name;
         killCount.text = "Kill count: " + tower.GetComponent<TowerController>().GetKillCount().ToString();
         rof.text = "Rate of fire: " + tower.GetComponent<TowerController>().fireRate.ToString() + "/s";
+        damage.text = "Damage: " + tower.GetComponent<TowerController>().damage.ToString();
     }
 
     public void Close()
@@ -36,6 +38,7 @@ public class TowerWindowScript : MonoBehaviour
         if(levelManager.DeductGold(10))
         {
             tower.GetComponent<TowerController>().UpgradeRof();
+            tower.GetComponent<TowerController>().UpgradeDamage();
         } 
     }
 }

@@ -7,6 +7,8 @@ public class BulletController : MonoBehaviour
     //wie¿a która wystrzeli³a pocisk
     public GameObject tower;
     public GameObject? target;
+    //obra¿enia jakie zada pocisk
+    public int damage = 5;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()

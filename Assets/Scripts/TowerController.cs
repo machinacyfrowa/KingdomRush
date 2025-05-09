@@ -10,6 +10,7 @@ public class TowerController : MonoBehaviour
     GameObject towerWindow;
     public float range = 10f;
     public float fireRate = 1f;
+    public float damage = 5f;
     int killCount = 0;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class TowerController : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
                 bullet.GetComponent<BulletController>().tower = gameObject;
                 bullet.GetComponent<BulletController>().target = target;
+                bullet.GetComponent<BulletController>().damage = (int)damage;
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 50;
             }
             yield return new WaitForSeconds(1f / fireRate);
@@ -70,5 +72,9 @@ public class TowerController : MonoBehaviour
     public void UpgradeRof()
     {
         fireRate *= 1.5f;
+    }
+    public void UpgradeDamage()
+    {
+        damage *= 1.2f;
     }
 }

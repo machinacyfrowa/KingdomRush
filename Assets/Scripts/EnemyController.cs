@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     public float speed = 5.0f;
     LevelManager levelManager;
     List<Transform> waypoints = new List<Transform>();
+    //iloœæ puntów ¿ycia przeciwnika
+    public int health = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,9 @@ public class EnemyController : MonoBehaviour
         {
             waypoints.Add(path.transform.GetChild(i).gameObject.transform);
         }
+        //iloœæ punktów ¿ycia przeciwnika roœnie o 2 co minutê
+        int minutesFromSceneStart = (int)(Time.timeSinceLevelLoad / 60);
+        health += minutesFromSceneStart * 2;
     }
 
     // Update is called once per frame
@@ -42,10 +47,14 @@ public class EnemyController : MonoBehaviour
         //Debug.Log("Collision!");
         if (collision.gameObject.tag == "Bullet")
         {
-            collision.gameObject.gameObject.GetComponent<BulletController>()
+            health -= collision.gameObject.GetComponent<BulletController>().damage;
+            if (health <= 0)
+            {
+                collision.gameObject.gameObject.GetComponent<BulletController>()
                                 .tower.GetComponent<TowerController>().RegisterKill();
-            levelManager.AddGold(1);
-            Destroy(gameObject);
+                levelManager.AddGold(1);
+                Destroy(gameObject);
+            }   
         }
     }
 }

@@ -82,6 +82,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5058485007194978329, guid: f53d93b116ace024389eda5a5b074cef, type: 3}
   bulletSpawn: {fileID: 7232792085094263722}
   range: 20
+  fireRate: 1
+  damage: 5
 --- !u!136 &6317425354999211214
 CapsuleCollider:
   m_ObjectHideFlags: 0
